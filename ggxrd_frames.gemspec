@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Unofficial gem which gets GGXrd frame data from official site"
   spec.description   = "This gem fetches GGXrd frame data from official site (http://www.4gamer.net/guide/ggxrd/) and gives you as hash."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/megane42/ggxrd_frames"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
