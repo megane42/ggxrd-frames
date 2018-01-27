@@ -28,9 +28,8 @@ class TestGgxrdFrames < Minitest::Test
     assert_equal data[14]['frame_adv']     , '- 9'
     assert_equal data[14]['invincibility'] , '1～7・12～19上半身，8～11膝上'
     assert_equal data[14]['remarks']       , ''
-
   end
-
+  
   
   def test_it_returns_nil_when_it_fails_to_fetch_data
     stub_request(:any, %r{www.4gamer.net/guide/ggxrd/.*}).

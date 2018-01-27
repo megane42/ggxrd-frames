@@ -13,8 +13,8 @@ Gem::Specification.new do |spec|
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   end
 
-  spec.summary       = "Unofficial gem which gets GGXrd frame data from official site"
-  spec.description   = "This gem fetches GGXrd frame data from official site (http://www.4gamer.net/guide/ggxrd/) and gives you as hash."
+  spec.summary       = "Unofficial gem which scrapes GGXrd official frame data page"
+  spec.description   = "This gem scrapes GGXrd official frame data page (http://www.4gamer.net/guide/ggxrd/) and gives you the result as a hash."
   spec.homepage      = "https://github.com/megane42/ggxrd_frames"
   spec.license       = "MIT"
 
