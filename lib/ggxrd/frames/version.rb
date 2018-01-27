@@ -1,4 +1,4 @@
-module Ggxrd
+module GGXrd
   module Frames
     VERSION = "0.1.0"
   end

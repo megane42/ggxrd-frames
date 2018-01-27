@@ -1,4 +1,4 @@
-module Ggxrd
+module GGXrd
   module Frames
     CHARACTERS = {
       'SO' => {url: 'http://www.4gamer.net/guide/ggxrd/031723018/', selector: 'div#table_result_1 table'},

@@ -5,7 +5,7 @@ require 'ggxrd/frames/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "ggxrd-frames"
-  spec.version       = Ggxrd::Frames::VERSION
+  spec.version       = GGXrd::Frames::VERSION
   spec.authors       = ["megane42"]
   spec.email         = ["h.kzm.gm@gmail.com"]
 

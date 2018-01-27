@@ -1,10 +1,10 @@
 # coding: utf-8
 require 'minitest_helper'
 
-class TestGgxrdFrames < Minitest::Test
+class TestGGXrdFrames < Minitest::Test
   
   def test_that_it_has_a_version_number
-    refute_nil ::Ggxrd::Frames::VERSION
+    refute_nil ::GGXrd::Frames::VERSION
   end
 
   
@@ -13,7 +13,7 @@ class TestGgxrdFrames < Minitest::Test
     stub_request(:any, %r{www.4gamer.net/guide/ggxrd/.*}).
       to_return(status: 200, headers: {content_type: 'text/html'}, body: stub_html)
 
-    data = Ggxrd::Frames::frame_of('SO')
+    data = GGXrd::Frames::frame_of('SO')
     
     assert_equal data[14]['name']          , '6＋P'
     assert_equal data[14]['damage']        , '32'
@@ -35,7 +35,7 @@ class TestGgxrdFrames < Minitest::Test
     stub_request(:any, %r{www.4gamer.net/guide/ggxrd/.*}).
       to_return(status: 404, headers: {content_type: 'text/html'})
     
-    assert_nil Ggxrd::Frames::frame_of('SO')
+    assert_nil GGXrd::Frames::frame_of('SO')
   end
 
 end

@@ -1,4 +1,4 @@
-module Ggxrd
+module GGXrd
   module Frames
     COLUMN = [
       'name',

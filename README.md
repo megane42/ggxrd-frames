@@ -1,4 +1,4 @@
-# Ggxrd::Frames
+# GGXrd::Frames
 
 This gem scrapes GGXrd official frame data page (http://www.4gamer.net/guide/ggxrd/) and gives you the result as a hash.
 
@@ -23,7 +23,7 @@ Or install it yourself as:
 ```ruby
 require 'ggxrd/frames'
 
-pp Ggxrd::Frames::frame_of('SO')[25]
+pp GGXrd::Frames::frame_of('SO')[25]
 
 ## ==>
 ##   {"name"=>"ヴォルカニックヴァイパー（HS）",
@@ -44,7 +44,7 @@ pp Ggxrd::Frames::frame_of('SO')[25]
 The argumet is the abbrev. of each character name. You can confirm all names by:
 
 ```ruby
-pp Ggxrd::Frames::CHARACTERS.keys
+pp GGXrd::Frames::CHARACTERS.keys
 
 ## ==> 
 ##   ["SO",

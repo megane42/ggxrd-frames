@@ -3,18 +3,18 @@ require "ggxrd/frames/characters"
 require "ggxrd/frames/column"
 require "mechanize"
 
-module Ggxrd
+module GGXrd
   module Frames
     def self.frame_of (character)
       begin
-        url = Ggxrd::Frames::CHARACTERS[character][:url]
+        url = GGXrd::Frames::CHARACTERS[character][:url]
         res = Mechanize.new.get(url)
       rescue Mechanize::ResponseCodeError => e
         return nil
       end
 
       # scraping
-      table = res.at(Ggxrd::Frames::CHARACTERS[character][:selector])
+      table = res.at(GGXrd::Frames::CHARACTERS[character][:selector])
       data = (
         table.search('tr').to_a.map do |row|
           row.search('td').to_a.map do |el|
