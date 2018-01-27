@@ -1,8 +1,6 @@
-# GgxrdFrames
+# Ggxrd::Frames
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ggxrd-frames`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem scrapes GGXrd official frame data page (http://www.4gamer.net/guide/ggxrd/) and gives you the result as a hash.
 
 ## Installation
 
@@ -22,7 +20,46 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'ggxrd/frames'
+
+pp Ggxrd::Frames::frame_of('SO')[25]
+
+## ==>
+##   {"name"=>"ヴォルカニックヴァイパー（HS）",
+##    "damage"=>"40・25",
+##    "tension"=>"300 / 480・720",
+##    "attack_lv"=>"2",
+##    "risc_lv"=>"-7 / +10",
+##    "prorate"=>"―",
+##    "attribute"=>"上",
+##    "startup"=>"5",
+##    "active"=>"2（3）18",
+##    "recovery"=>"29＋着地後8",
+##    "frame_adv"=>"- 41",
+##    "invincibility"=>"1〜6無，7〜11打，7〜空",
+##    "remarks"=>""}
+```
+
+The argumet is the abbrev. of each character name. You can confirm all names by:
+
+```ruby
+pp Ggxrd::Frames::CHARACTERS.keys
+
+## ==> 
+##   ["SO",
+##    "SO_DI",
+##    "KY",
+##    "MA",
+##    "MI",
+##    "ZT",
+##    "PO",
+##    ...]
+```
+
+## Caveat
+
+The result is written in Japanese because the official site is written in Japanese.
 
 ## Development
 
