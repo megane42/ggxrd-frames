@@ -41,7 +41,16 @@ class TestGGXrdFrames < Minitest::Test
     assert_raises(Exception) { client.frame_of('SO') }
   end
 
-  def test_it_raises_error_when_given_invalid_chara_name
+  def test_it_raises_error_when_it_fails_to_scrape
+    stub_request(:any, GGXrd::Frames::CHARACTERS[:SO][:url]).
+      to_return(status: 200, headers: {content_type: 'text/html'}, body: '<html>bazinga!</html>')
+
+    client = GGXrd::Frames.new
+
+    assert_raises(GGXrd::Frames::ScrapingError) { client.frame_of('SO') }
+  end
+
+  def test_it_raises_error_when_given_invalid_character_name
     client = GGXrd::Frames.new
 
     assert_raises(ArgumentError) { client.frame_of('FOOOOO') }
