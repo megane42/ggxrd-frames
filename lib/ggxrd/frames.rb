@@ -4,14 +4,17 @@ require "ggxrd/frames/column"
 require "mechanize"
 
 module GGXrd
-  module Frames
-    def self.frame_of (character)
-      begin
-        url = GGXrd::Frames::CHARACTERS[character][:url]
-        res = Mechanize.new.get(url)
-      rescue Mechanize::ResponseCodeError => e
-        return nil
-      end
+  class Frames
+    def frame_of (character)
+
+      raise ArgumentError unless character.is_a?(Symbol) || character.is_a?(String)
+
+      character = character.to_sym
+
+      raise ArgumentError unless GGXrd::Frames::CHARACTERS[character]
+
+      url = GGXrd::Frames::CHARACTERS[character][:url]
+      res = Mechanize.new.get(url)
 
       # scraping
       table = res.at(GGXrd::Frames::CHARACTERS[character][:selector])
@@ -22,14 +25,14 @@ module GGXrd
           end
         end
       )
-      
+
       # screening
       data.select! {|row| row != []}
 
       # convert to hash
       data.map do |row|
-        Hash[*([COLUMN, row].transpose.flatten)]
+        Hash[*([GGXrd::Frames::COLUMN, row].transpose.flatten)]
       end
-    end      
+    end
   end
 end

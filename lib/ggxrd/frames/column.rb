@@ -1,5 +1,5 @@
 module GGXrd
-  module Frames
+  class Frames
     COLUMN = [
       'name',
       'damage',

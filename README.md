@@ -23,7 +23,8 @@ Or install it yourself as:
 ```ruby
 require 'ggxrd/frames'
 
-pp GGXrd::Frames::frame_of('SO')[25]
+client = GGXrd::Frames.new
+pp client.frame_of('SO')[25]
 
 ## ==>
 ##   {"name"=>"ヴォルカニックヴァイパー（HS）",
@@ -46,14 +47,14 @@ The argumet is the abbrev. of each character name. You can confirm all names by:
 ```ruby
 pp GGXrd::Frames::CHARACTERS.keys
 
-## ==> 
-##   ["SO",
-##    "SO_DI",
-##    "KY",
-##    "MA",
-##    "MI",
-##    "ZT",
-##    "PO",
+## ==>
+##   [:SO,
+##    :SO_DI,
+##    :KY,
+##    :MA,
+##    :MI,
+##    :ZT,
+##    :PO,
 ##    ...]
 ```
 
